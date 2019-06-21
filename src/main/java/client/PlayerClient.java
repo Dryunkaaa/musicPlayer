@@ -13,8 +13,7 @@ public class PlayerClient {
         FileChooser.ExtensionFilter fileExtensions =
                 new FileChooser.ExtensionFilter("Media Files", "*.mp3", "*.mp4");
         fileChooser.getExtensionFilters().addAll(fileExtensions);
-        File mediaFile = null;
-        mediaFile = fileChooser.showOpenDialog(null);
+        File mediaFile = fileChooser.showOpenDialog(null);
         return mediaFile;
     }
 
