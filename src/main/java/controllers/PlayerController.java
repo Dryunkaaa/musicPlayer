@@ -19,13 +19,10 @@ public class PlayerController implements Initializable {
     private ImageView play_pause;
 
     @FXML
-    private ImageView imageMuzic;
+    private ImageView imageMusic;
 
     @FXML
     private Slider sliderOfTheTrack;
-
-    @FXML
-    private ProgressBar volumeBar;
 
     @FXML
     private Button browseButton;
@@ -35,6 +32,13 @@ public class PlayerController implements Initializable {
 
     @FXML
     private Label nameOfTheTrack;
+
+    @FXML
+    private Slider volumeSlider;
+
+    @FXML
+    private ImageView volumeImage;
+
 
     private File mediaFile = null;
 

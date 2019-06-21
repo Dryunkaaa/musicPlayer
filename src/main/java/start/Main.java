@@ -27,7 +27,7 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader(ClassLoader.getSystemClassLoader().getResource("fxmls/player.fxml"));
         loader.setController(playerController);
         Parent root = (Parent) loader.load();
-        Scene scene = new Scene(root, 600, 400);
+        Scene scene = new Scene(root, 734, 559);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Player");
         primaryStage.show();
