@@ -10,7 +10,6 @@
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #292e34;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="play_pause" fitHeight="32.0" fitWidth="19.0" layoutX="291.0" layoutY="304.0" pickOnBounds="true" preserveRatio="true">
@@ -31,7 +30,7 @@
          </font>
       </Button>
       <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" layoutX="291.0" layoutY="53.0" />
-      <Label fx:id="nameOfTheTrack" alignment="CENTER" layoutX="280.0" layoutY="200.0" textFill="#fffdfd">
+      <Label fx:id="nameOfTheTrack" layoutX="15.0" layoutY="194.0" prefHeight="30.0" prefWidth="570.0" textFill="#fffdfd">
          <font>
             <Font size="20.0" />
          </font>
