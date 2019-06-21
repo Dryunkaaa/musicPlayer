@@ -108,8 +108,15 @@ public class PlayerController implements Initializable {
 
     // пауза\запуск медиафайла
     private void startOrPause() {
-        if (start) mediaPlayer.pause();
-        else mediaPlayer.play();
+        if (start) Main.service.submit(() -> mediaPlayer.pause());
+        else {
+            Main.service.submit(() -> {
+                double value = sliderOfTheTrack.getValue();
+                Duration duration = Duration.seconds(value);
+                mediaPlayer.setStartTime(duration);
+                mediaPlayer.play();
+            });
+        }
         changeImagePause();
         start = !start;
     }
@@ -129,26 +136,33 @@ public class PlayerController implements Initializable {
     @FXML
     private void setActionsToSliderOfTheTrack() {
         sliderOfTheTrack.setOnMouseDragged(event -> {
-            eventToSliderOfTheTrack();
+            Main.service.submit(() -> eventToSliderOfTheTrack());
         });
 
         sliderOfTheTrack.setOnMouseClicked(event -> {
-            eventToSliderOfTheTrack();
+            Main.service.submit(() -> eventToSliderOfTheTrack());
         });
     }
 
     //событие слайдера трека
     private void eventToSliderOfTheTrack() {
+        if (start) {
         start = false;
         mediaPlayer.pause();
+        mediaPlayer.stop();
+        changeTimeOnPlayer();
+        start = true;
+        mediaPlayer.seek
+        mediaPlayer.play();
+        }else changeTimeOnPlayer();
+    }
+
+    // смена времени плеера в зависимости от слайдера
+    private void changeTimeOnPlayer(){
         double value = sliderOfTheTrack.getValue();
         Duration duration = Duration.seconds(value);
         mediaPlayer.setStartTime(duration);
-        mediaPlayer.stop();
-        mediaPlayer.play();
-        start = true;
     }
-
 
     // изменение громкости на плеере
     @FXML
